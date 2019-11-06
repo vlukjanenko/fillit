@@ -18,26 +18,26 @@ FLAGS = -Wall -Wextra -Werror
 SOURCES  =  fillit.c ft_sqrt.c getinput.c getinput2.c solveprint.c vars.c\
 newsubset.c
 OBJECTS = $(SOURCES:.c=.o)
+HEADERS = ./libft/includes
 LIB = libft/libft.a
-
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS) $(LIB) 
-	$(COMPILERC) $(FLAGS) -L libft/ -I $(HEADERS) -lft $(OBJECTS) -o $(NAME)
+$(NAME): $(OBJECTS) $(LIB)
+	$(COMPILERC) -o $(NAME) $(OBJECTS) $(FLAGS) -I$(HEADERS) -L libft/ -lft
+
+%.o: %.c $(HEADER)
+	$(COMPILERC) -o $@ -c $<
 
 $(LIB):
 	make -C libft/
 
-%.o: %.c $(HEADER)
-	$(COMPILERC) $(FLAGS) -o $@ -c $< 
-
 clean:
 	@rm -f $(OBJECTS)
-	@$(MAKE) -C ./libft clean
+	@make -C libft/ clean
 
 fclean: clean
 	@rm -f $(NAME)
-	@$(MAKE) -C ./libft fclean
+	@make -C libft/ fclean
 
 re: fclean all
