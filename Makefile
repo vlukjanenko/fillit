@@ -6,12 +6,13 @@
 #    By: majosue <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/04 16:04:38 by majosue           #+#    #+#              #
-#    Updated: 2019/10/30 11:39:01 by majosue          ###   ########.fr        #
+#    Updated: 2019/11/06 17:44:48 by majosue          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME = fillit
 HEADER = fillit.h
+HEADERS = ./libft/includes
 COMPILERC = gcc
 FLAGS = -Wall -Wextra -Werror
 SOURCES  =  fillit.c ft_sqrt.c getinput.c getinput2.c solveprint.c vars.c\
@@ -19,16 +20,17 @@ newsubset.c
 OBJECTS = $(SOURCES:.c=.o)
 LIB = libft/libft.a
 
+
 all: $(NAME)
 
 $(NAME): $(OBJECTS) $(LIB) 
-	$(COMPILERC) $(FLAGS) -L libft/ -I $(HEADER) -lft $(OBJECTS) -o $(NAME)
+	$(COMPILERC) $(FLAGS) -L libft/ -I $(HEADERS) -lft $(OBJECTS) -o $(NAME)
 
 $(LIB):
 	make -C libft/
 
 %.o: %.c $(HEADER)
-	$(COMPILERC) $(FLAGS) -o $@ -c $<
+	$(COMPILERC) $(FLAGS) -o $@ -c $< 
 
 clean:
 	@rm -f $(OBJECTS)

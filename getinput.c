@@ -6,7 +6,7 @@
 /*   By: majosue <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 11:18:22 by majosue           #+#    #+#             */
-/*   Updated: 2019/11/05 18:06:40 by majosue          ###   ########.fr       */
+/*   Updated: 2019/11/06 18:00:14 by majosue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	getinput(int fd, char (*input)[26][4][5])
 
 	k = 0;
 	i = 0;
-	while (read(fd, (*input)[i][k], 5) > 0 && i < 26)
+	while (i < 26 && read(fd, (*input)[i][k], 5) > 0)
 	{
 		if (!valid((*input)[i][k]))
 			return (0);
