@@ -6,7 +6,7 @@
 #    By: majosue <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/04 16:04:38 by majosue           #+#    #+#              #
-#    Updated: 2019/11/06 17:44:48 by majosue          ###   ########.fr        #
+#    Updated: 2019/11/06 20:00:38 by majosue          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -27,7 +27,7 @@ $(NAME): $(OBJECTS) $(LIB)
 	$(COMPILERC) -o $(NAME) $(OBJECTS) $(FLAGS) -I$(HEADERS) -L libft/ -lft
 
 %.o: %.c $(HEADER)
-	$(COMPILERC) -o $@ -c $<
+	$(COMPILERC) $(FLAGS) -o $@ -c $<
 
 $(LIB):
 	make -C libft/
