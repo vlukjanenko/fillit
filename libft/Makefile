@@ -6,7 +6,7 @@
 #    By: majosue <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/04 16:04:38 by majosue           #+#    #+#              #
-#    Updated: 2019/10/29 15:35:22 by majosue          ###   ########.fr        #
+#    Updated: 2019/11/07 17:44:44 by majosue          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -16,8 +16,6 @@ HEADER = $(HEADERS)/libft.h $(HEADERS)/get_next_line.h
 COMPILERC = gcc
 MAKERLIB = ar rc
 FLAGS = -Wall -Wextra -Werror
-FLAGS1 = -c
-SOURCES_DIR = ./
 SOURCES  =  \
 	ft_bzero.c      ft_isalnum.c    ft_isalpha.c    ft_isascii.c    ft_isdigit.c \
 	ft_isprint.c    ft_itoa.c       ft_lstadd.c     ft_lstdel.c     ft_lstdelone.c \
@@ -40,7 +38,7 @@ $(NAME): $(OBJECTS)
 	ranlib $(NAME)
 
 %.o: %.c $(HEADER)
-	$(COMPILERC) $(FLAGS) -I $(HEADERS)  -o $@ -c $<
+	$(COMPILERC) $(FLAGS) -I $(HEADERS) -o $@ -c $<
 
 clean:
 	@rm -f $(OBJECTS)
