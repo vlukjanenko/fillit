@@ -6,7 +6,7 @@
 /*   By: majosue <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 08:40:18 by majosue           #+#    #+#             */
-/*   Updated: 2019/11/06 20:05:20 by majosue          ###   ########.fr       */
+/*   Updated: 2019/11/07 17:28:06 by majosue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		fillit(int **subsets, int size, int n)
 	int i;
 
 	i = 0;
-	while (i < size)
+	while (i < size && subsets[0][0] == subsets[i][0])
 	{
 		g_answer[g_depth] = subsets[i];
 		if (g_depth == (n - 1))
