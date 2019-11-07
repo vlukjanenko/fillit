@@ -6,13 +6,13 @@
 #    By: majosue <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/04 16:04:38 by majosue           #+#    #+#              #
-#    Updated: 2019/11/07 17:44:44 by majosue          ###   ########.fr        #
+#    Updated: 2019/11/07 18:17:04 by majosue          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME = libft.a
-HEADERS = ./includes
-HEADER = $(HEADERS)/libft.h $(HEADERS)/get_next_line.h
+HEADERS = includes/
+HEADER = $(HEADERS)libft.h $(HEADERS)get_next_line.h
 COMPILERC = gcc
 MAKERLIB = ar rc
 FLAGS = -Wall -Wextra -Werror
