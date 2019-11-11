@@ -6,7 +6,7 @@
 /*   By: majosue <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 08:40:18 by majosue           #+#    #+#             */
-/*   Updated: 2019/11/07 17:28:06 by majosue          ###   ########.fr       */
+/*   Updated: 2019/11/11 14:36:44 by majosue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ int		main(int argc, char **argv)
 	}
 	if ((fd = open(argv[1], O_RDONLY)) < 0)
 	{
-		ft_putendl("usage: ./fillit fillit_sample_file");
+		ft_putendl("error");
 		return (0);
 	}
 	n = getinput2(fd, &input2);
